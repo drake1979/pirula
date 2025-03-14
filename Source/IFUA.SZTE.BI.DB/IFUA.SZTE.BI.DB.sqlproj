@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>IFUA.SZTE.BI.DB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{6bd4ea23-a1aa-4db6-9262-6e6e1c44e428}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>IFUA.SZTE.BI.DB</RootNamespace>
+    <AssemblyName>IFUA.SZTE.BI.DB</AssemblyName>
+    <ModelCollation>1038,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Hungarian_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dm\" />
+    <Folder Include="dm\Tables\" />
+    <Folder Include="com_\" />
+    <Folder Include="com_\Tables\" />
+    <Folder Include="hst\" />
+    <Folder Include="hst\Tables\" />
+    <Folder Include="landing\" />
+    <Folder Include="landing\Tables\" />
+    <Folder Include="dm\Views\" />
+    <Folder Include="etl\" />
+    <Folder Include="etl\Functions\" />
+    <Folder Include="etl\Stored Procedures\" />
+    <Folder Include="Security\" />
+    <Folder Include="com_\Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dm\Tables\FactWholesaleRefund.sql" />
+    <Build Include="com_\Tables\ImportFile.sql" />
+    <Build Include="com_\Tables\TechnicalLog.sql" />
+    <Build Include="com_\Tables\Configuration.sql" />
+    <Build Include="com_\Tables\EtlSession.sql" />
+    <Build Include="com_\Tables\ImportError.sql" />
+    <Build Include="com_\Tables\Mapping.sql" />
+    <Build Include="com_\Tables\MappingSheet.sql" />
+    <Build Include="com_\Tables\ProcessType.sql" />
+    <Build Include="com_\Tables\Sources.sql" />
+    <Build Include="dm\Tables\DimClinicControlling.sql" />
+    <Build Include="dm\Tables\DimProductMedivus.sql" />
+    <Build Include="dm\Tables\DimProductMedsol.sql" />
+    <Build Include="dm\Tables\DimProductPupha.sql" />
+    <Build Include="dm\Tables\FactClinicPrescriptionsPriceLog.sql" />
+    <Build Include="hst\Tables\DimProductMedivus.sql" />
+    <Build Include="hst\Tables\DimProductMedsol.sql" />
+    <Build Include="hst\Tables\DimProductPupha.sql" />
+    <Build Include="landing\Tables\ExcelWholesaleRefund.sql" />
+    <Build Include="landing\Tables\MedivusPharmacyReceipt.sql" />
+    <Build Include="landing\Tables\MedsolEmsReceipt.sql" />
+    <Build Include="landing\Tables\PuphaGyogysz.sql" />
+    <Build Include="dm\Tables\DimClinicRLS.sql" />
+    <Build Include="dm\Tables\DimNaviRLS.sql" />
+    <Build Include="landing\Tables\NaviRLS.sql" />
+    <Build Include="landing\Tables\ClinicRLS.sql" />
+    <Build Include="dm\Tables\DimPharmacy.sql" />
+    <Build Include="dm\Tables\DimPharmacyMovementType.sql" />
+    <Build Include="dm\Tables\DimDate.sql" />
+    <Build Include="dm\Tables\DimPharmacyReceiptTitle.sql" />
+    <Build Include="dm\Tables\DimClinic.sql" />
+    <Build Include="dm\Tables\DimDoctor.sql" />
+    <Build Include="dm\Tables\FactPharmacyTransactions.sql" />
+    <Build Include="dm\Tables\FactClinicPrescriptions.sql" />
+    <Build Include="dm\Views\Clinic Prescriptions.sql" />
+    <Build Include="dm\Views\Wholesale Refund.sql" />
+    <Build Include="dm\Views\ImportFile.sql" />
+    <Build Include="dm\Views\Kivaltas Arany.sql" />
+    <Build Include="dm\Views\Pharmacy.sql" />
+    <Build Include="dm\Views\Pharmacy Movement Type.sql" />
+    <Build Include="dm\Views\Dátum.sql" />
+    <Build Include="dm\Views\Pharmacy Receipt Title.sql" />
+    <Build Include="dm\Views\Clinic.sql" />
+    <Build Include="dm\Views\Doctor.sql" />
+    <Build Include="dm\Views\Pharmacy Transactions.sql" />
+    <Build Include="etl\Functions\udf_GetHash_01.sql" />
+    <Build Include="etl\Functions\udf_GetHash_02.sql" />
+    <Build Include="etl\Functions\udf_GetHash_03.sql" />
+    <Build Include="etl\Functions\udf_GetHash_04.sql" />
+    <Build Include="etl\Functions\udf_GetHash_05.sql" />
+    <Build Include="etl\Functions\udf_GetHash_06.sql" />
+    <Build Include="etl\Functions\udf_GetHash_07.sql" />
+    <Build Include="etl\Functions\udf_GetHash_08.sql" />
+    <Build Include="etl\Functions\udf_GetHash_09.sql" />
+    <Build Include="etl\Functions\udf_GetHash_10.sql" />
+    <Build Include="etl\Functions\udf_GetHash_12.sql" />
+    <Build Include="etl\Functions\udf_GetHash_14.sql" />
+    <Build Include="etl\Functions\udf_GetHash_15.sql" />
+    <Build Include="etl\Functions\udf_GetHash_16.sql" />
+    <Build Include="etl\Functions\udf_GetHash_17.sql" />
+    <Build Include="etl\Functions\udf_GetHash_20.sql" />
+    <Build Include="etl\Functions\udf_GetPuphaPublicationDate.sql" />
+    <Build Include="etl\Functions\udf_StopWatch.sql" />
+    <Build Include="etl\Functions\udf_SplitIds.sql" />
+    <Build Include="etl\Stored Procedures\usp_EndEtlSession.sql" />
+    <Build Include="etl\Stored Procedures\usp_GetEnv.sql" />
+    <Build Include="etl\Stored Procedures\usp_GetImportFiles.sql" />
+    <Build Include="etl\Stored Procedures\usp_GetSourceProcessingMode.sql" />
+    <Build Include="etl\Stored Procedures\usp_GetTableMappings.sql" />
+    <Build Include="etl\Stored Procedures\usp_InsertImportFile.sql" />
+    <Build Include="etl\Stored Procedures\usp_LogEvent.sql" />
+    <Build Include="etl\Stored Procedures\usp_ProcessExcel.sql" />
+    <Build Include="etl\Stored Procedures\usp_ProcessExcelWholesaleRefund.sql" />
+    <Build Include="etl\Stored Procedures\usp_ProcessMedivus.sql" />
+    <Build Include="etl\Stored Procedures\usp_ProcessMedivusPharmacyReceipt.sql" />
+    <Build Include="etl\Stored Procedures\usp_ProcessMedsol.sql" />
+    <Build Include="etl\Stored Procedures\usp_ProcessMedsolClinicPrescriptions.sql" />
+    <Build Include="etl\Stored Procedures\usp_ProcessMedsolEmsReceipt.sql" />
+    <Build Include="etl\Stored Procedures\usp_ProcessPupha.sql" />
+    <Build Include="etl\Stored Procedures\usp_ProcessPuphaGyogysz.sql" />
+    <Build Include="etl\Stored Procedures\usp_StartEtlSession.sql" />
+    <Build Include="etl\Stored Procedures\usp_TruncateExcel.sql" />
+    <Build Include="etl\Stored Procedures\usp_TruncateMedivus.sql" />
+    <Build Include="etl\Stored Procedures\usp_TruncateMedsol.sql" />
+    <Build Include="etl\Stored Procedures\usp_TruncatePupha.sql" />
+    <Build Include="etl\Stored Procedures\usp_UpdateImportFile.sql" />
+    <Build Include="etl\Stored Procedures\usp_TruncateRLS.sql" />
+    <Build Include="etl\Stored Procedures\usp_ProcessRLS.sql" />
+    <Build Include="etl\Stored Procedures\usp_ProcessRLSCLinic.sql" />
+    <Build Include="etl\Stored Procedures\usp_ProcessRLSNavi.sql" />
+    <Build Include="etl\Stored Procedures\usp_GetDimPharmacies.sql" />
+    <Build Include="Security\com_.sql" />
+    <Build Include="Security\dm.sql" />
+    <Build Include="Security\etl.sql" />
+    <Build Include="Security\hst.sql" />
+    <Build Include="Security\landing.sql" />
+    <Build Include="etl\Stored Procedures\usp_GetImportSuccess.sql" />
+    <Build Include="dm\Tables\DimSupplier.sql" />
+    <Build Include="com_\Views\vw_ProcessCheckErrors.sql" />
+    <Build Include="etl\Functions\udf_GetHash_18.sql" />
+    <Build Include="etl\Stored Procedures\usp_DropIndexPUPHA.sql" />
+    <Build Include="etl\Stored Procedures\usp_DropIndexMEDSOL.sql" />
+    <Build Include="etl\Stored Procedures\usp_DropIndexMEDIVUS.sql" />
+    <Build Include="etl\Stored Procedures\usp_DropIndexEXCEL.sql" />
+    <Build Include="etl\Stored Procedures\usp_CreateIndexPUPHA.sql" />
+    <Build Include="etl\Stored Procedures\usp_CreateIndexMEDSOL.sql" />
+    <Build Include="etl\Stored Procedures\usp_CreateIndexMEDIVUS.sql" />
+    <Build Include="etl\Stored Procedures\usp_CreateIndexEXCEL.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SchemaCompare.scmp" />
+  </ItemGroup>
+</Project>

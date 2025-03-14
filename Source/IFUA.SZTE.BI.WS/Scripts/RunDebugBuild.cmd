@@ -1,0 +1,1 @@
+c:\Sources\IFUA\SZTE\Source\IFUA.SZTE.BI.WS\bin\Debug\IFUA.SZTE.BI.WS.exe debug
