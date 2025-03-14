@@ -1,1 +1,21 @@
-{"name": "My Documentation", "description": "This is the documentation for my project.", "repository": "https://github.com/drake1979/pirula"}
+﻿{
+  "name": "My Documentation",
+  "description": "This is the documentation for my project.",
+  "repository": "https://github.com/drake1979/pirula",
+  "favicon": "/static/favicon.ico",
+  "colors": {
+    "primary": "#007BFF",
+    "secondary": "#6C757D"
+  },
+  "navigation": [
+    {
+      "group": "Introduction",
+      "pages": [
+        {
+          "name": "Overview",
+          "path": "/"
+        }
+      ]
+    }
+  ]
+}
